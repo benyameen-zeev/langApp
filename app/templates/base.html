@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangApp</title>
+    <!-- Add your CSS files or styles here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('routes.home') }}">Home</a>
+            <a href="{{ url_for('routes.email_login') }}">Log in with email</a>
+            <a href="{{ url_for('routes.signup') }}">Sign up</a>
+            <a href="{{ url_for('routes.google_login') }}">Log in with Google</a>
+            <a href="{{ url_for('routes.logout') }}">Log out</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content will be added by child templates -->
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Add your footer content here -->
+    </footer>
+</body>
+</html>
